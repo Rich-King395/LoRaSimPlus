@@ -76,15 +76,17 @@ Record the parameter settings and simulation results in a text file
 simulation.simulation_record()
 ```
 
-
-
 ### Node.py
+Define node class. The position of each node is generated randomly. Each node generates packets with the allocation method. 
 
 ### Gateway.py
+Define node class. The position of gateways is set according to their quantity.
 
 ### Packet.py
+Define packet class, which provides functions to calculate the airtime, receive sensitivity, minimum Signal-to-Noise Ratio and transmission energy of each packet.
 
 ### Propagation.py
+
 
 ### Allocation.py
 
