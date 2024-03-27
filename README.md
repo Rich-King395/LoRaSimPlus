@@ -1,5 +1,5 @@
-# LoRaWANSim
-LoRaWANSim is a LoRa Simulator developed based on simpy, which is a Python library used for discrete events simulation. 
+# LoRaSim for Parameter Allocation
+[LoRaSim](https://www.lancaster.ac.uk/scc/sites/lora/lorasim.html) is a LoRa Simulator developed based on simpy, a Python library used for discrete events simulation. LoRaSim proposed a complete collision detection mechanism. LoRaSim for Parameter Allocation provides researchers with richer programmable services based on LoRaSim, which can help researchers do deeper research on energy consumption and packet transmission of the LoRaWAN network.
 
 ## Requirement
 * Python == 3.x
