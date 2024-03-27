@@ -83,13 +83,13 @@ Define node class. The position of each node is generated randomly. Each node ge
 Define node class. The position of gateways is set according to their quantity.
 
 ### Packet.py
-Define packet class, which provides functions to calculate the airtime, receive sensitivity, minimum Signal-to-Noise Ratio and transmission energy of each packet.
+Define packet class, which provides functions to calculate the airtime, receive sensitivity, minimum SNR and transmission energy of each packet.
 
 ### Propagation.py
-
+The simulator's propagation model includes packet collision checking and the path loss model. Packet collision checking includes frequency collision, SF collision, time collision and power collision. There are two conditions for a packet to be successfully received by the gateway: no collision during transmission and the packet is not lost. The simulator uses RSSI(Received Signal Strength Indication) and SNR(Signal Noise Ratio) to determine whether the packet is lost. The RSSI should be larger than the receive sensitivity and SNR should be larger than the minimum SNR requirement to make the packet received successfully.
 
 ### Allocation.py
-
+Include LoRa parameters(SF, Bandwidth, Carrier frequency) allocation method. Three allocation methods are included: random allocation, polling allocation and closest allocation. The closest method allocates the minimum parameter setting to the node that enables its packet to be received successfully.  
 
 
 
