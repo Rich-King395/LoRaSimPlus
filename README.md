@@ -45,12 +45,7 @@ For example:
 python main.py 100 5000 Local random 3600000 1 1 1 1 3000 20
 ```
 
-
-
-
-
-
-
-
+During the simulation, the simulation configurations and results will be printed out in the terminal. After the simulation, the configurations and results are recorded in a text file.
 
 ## Software Framework
+The simulator is composed of 
