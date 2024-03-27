@@ -16,7 +16,8 @@ python main.py
 You can also leave the default settings unchanged and set the parameters through the command line:
 
 ```
-python main.py <NodeNum> <>
+python main.py <NodeNum> <SendInterval> <AllocationType> <AllocationMethod> <SimulationDuration> <GWNum> <CollioosionCheck> <AntennaType> <NetworkNum> <TopologyRadius> <PayloadSize>
 ```
+
 
 ## Software Framework
