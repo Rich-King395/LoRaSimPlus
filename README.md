@@ -23,7 +23,7 @@ python main.py <NodeNum> <SendInterval> <AllocationType> <AllocationMethod> <Sim
 
 **SendInterval**: Average packet send interval of node, ms
 
-**AllocationType**: "Local" means nodes allocate LoRa parameters each time it generate a packet in the simulation process. "Global" means the loRa parameters settings are allocated when a node is set up and each node sends packets with its determined parameters during the whole simulation process.
+**AllocationType**: "Local" means nodes allocate LoRa parameters each time it generate a packet in the simulation process. "Global" means the loRa parameters settings are allocated when a node is set up and each node sends packets with its determined parameters during the simulation process.
 
 **SimulationDuration**: Total simulation time, ms
 
@@ -57,7 +57,24 @@ Include all the global variables and LoRaWAN parameters.
 The main program of the simulator starts the simulation and outputs the results, which also provides command line interface for users to set LoRa parameters. 
 
 ### simulation.py
-Define a class called Simulation, which provides methods that can be called by the main program. 
+Define a class called Simulation, which provides methods that can be called by the main program.
+
+Run the simulation
+```
+Simulation.run()
+```
+Calculate the simulation results 
+```
+simulation.results_calculation()
+```
+Show the results in the terminal 
+```
+simulation.results_show()
+```
+Record the parameter settings and simulation results in a text file
+```
+simulation.simulation_record()
+```
 
 
 
