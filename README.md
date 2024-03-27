@@ -35,9 +35,17 @@ python main.py <NodeNum> <SendInterval> <AllocationType> <AllocationMethod> <Sim
 
 **NetworkNum**：Number of networks
 
-**TopologyRadius**: Radius of network topology
+**TopologyRadius**: Radius of network topology,m
 
 **PayloadSize**: Packet payload size
+
+For example:
+
+```
+python main.py 100 5000 Local random 3600000 1 1 1 1 3000 20
+```
+
+
 
 
 
