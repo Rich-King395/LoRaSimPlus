@@ -18,6 +18,7 @@ You can also leave the default settings unchanged and set the parameters through
 ```
 python main.py <NodeNum> <SendInterval> <AllocationType> <AllocationMethod> <SimulationDuration> <GWNum> <CollioosionCheck> <AntennaType> <NetworkNum> <TopologyRadius> <PayloadSize>
 ```
+
 <NodeNum>: Number of nodes
 
 <SendInterval>: Average packet send interval of node, ms
