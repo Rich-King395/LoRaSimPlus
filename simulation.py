@@ -4,7 +4,7 @@ from ParameterConfig import *
 from Propagation import checkcollision
 from Gateway import myBS
 from Node import myNode
-
+from datetime import datetime
 
 class Simulation:
     def __init__(self):
@@ -22,6 +22,11 @@ class Simulation:
         self.TotalEnergyConsumption = 0
         self.throughput = 0
         self.EffectEnergyConsumPerByte = 0
+        self.file_name = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        self.folder_path = os.path.join(os.getcwd(), "results")
+        self.folder_path = os.path.join(self.folder_path,self.file_name)
+        if not os.path.exists(self.folder_path):
+            os.makedirs(self.folder_path)
 
     def run(self):
         # generate BS
@@ -54,11 +59,13 @@ class Simulation:
             id += 1
 
             # store nodes and basestation locations
-        with open('nodes.txt', 'w') as nfile:
+        node_path = os.path.join(self.folder_path, self.file_name+"-node.txt")
+        with open(node_path, 'w') as nfile:
             for node in nodes:
                 nfile.write('{x} {y} {id}\n'.format(**vars(node)))
 
-        with open('basestation.txt', 'w') as bfile:
+        basestation = os.path.join(self.folder_path, self.file_name+"-basestation.txt")
+        with open(basestation, 'w') as bfile:
             for basestation in bs:
                 bfile.write('{x} {y} {id}\n'.format(**vars(basestation)))
 
@@ -122,21 +129,11 @@ class Simulation:
         # this can be done to keep graphics visible
         if (graphics == 1):
             input('Press Enter to continue ...')
-        # save experiment data into a dat file that can be read by e.g. gnuplot
-        # name of file would be:  exp0.dat for experiment 0
-        fname = "exp" + str(allocation_method) + "d99" + "BS" + str(nrBS) + "Intf.dat"
-        print (fname)
-        if os.path.isfile(fname):
-            res = "\n" + str(nrNodes) + " " + str(self.der[0]) 
-        else:
-            res = "# nrNodes DER0 AVG-DER\n" + str(nrNodes) + " " + str(self.der[0]) + " " + str(self.avgDER) 
-        with open(fname, "a") as myfile:
-            myfile.write(res)
-        myfile.close()
     
     def simulation_record(self):
-        file_name = self.simstarttime.strftime("%Y-%m-%d_%H-%M-%S.txt")
-        with open(file_name, 'w') as file:
+        result_file_name = self.file_name+"-result.txt"
+        file_path = os.path.join(self.folder_path, result_file_name)
+        with open(file_path, 'w') as file:
             file.write('Simulation start at {}'.format(self.simstarttime))
             file.write(' and end at {}\n'.format(self.simendtime))
             file.write('--------Parameter Setting--------\n')
